@@ -1,0 +1,17 @@
+[Unit]
+Description=harmony2mqtt service
+
+[Service]
+WorkingDirectory=/home/pi/harmony2mqtt
+Type=simple
+RemainAfterExit=no
+Restart=always
+RestartSec=1s
+User=root
+ExecStart=/home/pi/harmony2mqtt/harmony2mqtt
+TimeoutStartSec=0
+StandardOutput=inherit
+StandardError=inherit
+
+[Install]
+WantedBy=multi-user.target
