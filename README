@@ -1,0 +1,82 @@
+sudo apt-get install libpaho-mqtt-dev
+
+https://github.com/eclipse/paho.mqtt.c
+
+
+# 서비스 파일 생성 위치
+/etc/systemd/system/harmony2mqtt.service
+
+# 주키퍼 서비스를 등록(*.service 파일을 읽어서 등록 함)
+systemctl daemon-reload
+
+# 시스템이 시작될 때 자동으로 시작되도록 등록
+systemctl enable harmony2mqtt
+
+# 시작
+systemctl stop harmony2mqtt
+
+# 정지
+systemctl stop harmony2mqtt
+
+# 상태 확인
+systemctl status harmony2mqtt
+
+nohup sudo ./a.out &
+
+const KEY_MAPPING = {
+    "ec01": "POWER_OFF",
+    "e801": "SCENE_MUSIC",
+    "ed01": "SCENE_TV",
+    "e901": "SCENE_MOVIE",
+
+    "f20f": "HOMECTRL_LIGHT1",
+    "f30f": "HOMECTRL_LIGHT2",
+    "f00f": "HOMECTRL_PLUS",
+    "f10f": "HOMECTRL_MINUS",
+    "f40f": "HOMECTRL_PLUG1",
+    "f50f": "HOMECTRL_PLUG2",
+
+    "f701": "COLOR_RED",
+    "f601": "COLOR_GREEN",
+    "f501": "COLOR_YELLO",
+    "f401": "COLOR_BLUE",
+
+    "9a00": "DVR",
+    "8d00": "GUIDE",
+    "ff01": "INFO",
+    "9400": "EXIT",
+    "0065": "MENU",
+
+    "e900": "VOL_UP",
+    "ea00": "VOL_DN",
+    "9c00": "CHAN_UP",
+    "9d00": "CHAN_DN",
+    "0052": "DIR_UP",
+    "0051": "DIR_DN",
+    "0050": "DIR_LEFT",
+    "004f": "DIR_RIGHT",
+    "0058": "OKAY",
+
+    "e200": "VOL_MUTE",
+    "2402": "BACK",
+
+    "b400": "MEDIA_PRIV",
+    "b200": "MEDIA_RECODE",
+    "b000": "MEDIA_PLAY",
+    "b100": "MEDIA_PAUSE",
+    "b300": "MEDIA_NEXT",
+    "b700": "MEDIA_STOP",
+
+    "001e": "NUM_1",
+    "001f": "NUM_2",
+    "0020": "NUM_3",
+    "0021": "NUM_4",
+    "0022": "NUM_5",
+    "0023": "NUM_6",
+    "0024": "NUM_7",
+    "0025": "NUM_8",
+    "0026": "NUM_9",
+    "0056": "NUM_HYPHEN",
+    "0027": "NUM_0",
+    "0028": "NUM_E",
+};
