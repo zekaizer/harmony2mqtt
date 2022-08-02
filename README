@@ -21,7 +21,16 @@ systemctl stop harmony2mqtt
 # 상태 확인
 systemctl status harmony2mqtt
 
-nohup sudo ./a.out &
+
+# libpaho-mqtt install from git for rpi2
+sudo apt-get install cmake make gcc libssl-dev
+git clone https://github.com/eclipse/paho.mqtt.c.git
+cd paho.mqtt.c
+cmake -DPAHO_BUILD_STATIC=TRUE -DPAHO_BUILD_SAMPLES=TRUE -DPAHO_WITH_SSL=TRUE
+make
+sudo make install
+
+
 
 const KEY_MAPPING = {
     "ec01": "POWER_OFF",
