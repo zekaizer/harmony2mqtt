@@ -21,6 +21,7 @@
 #define HARMONY_PRODUCT_ID          0xc52b
 #define HARMONY_TIMEOUT             1000
 #define HARMONY_MAX_MSG_LENGTH      100
+#define HARMONY_PAIRING_IDX         1 // Pairing index
 #define HARMONY_KEY_POSITION        3 // Found by sniffing
 
 int mqtt_init(void);
@@ -118,7 +119,7 @@ int main() {
 
 			privtime = curtime;
 
-			if ((actual_length == 15) && data[0] == 0x20 && data[1] == 0x01) {
+			if ((actual_length == 15) && data[0] == 0x20 && data[HARMONY_PAIRING_IDX] == 0x01/*first*/) {
 				int codes[4] = {0,};
 
 				if (data[2] == 0x01) {
